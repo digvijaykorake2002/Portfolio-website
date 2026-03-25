@@ -71,6 +71,39 @@ img {
 }
 
 /*===== CLASS CSS ===== */
+
+.role {
+  display: inline;
+  font-size: 1.em;   /* smaller than before */
+  font-weight: 610;
+  color: #181818;
+}
+
+/* Match cursor size */
+.typed-cursor {
+  font-size: 0.8em;
+}
+
+.skills__icon {
+  width: 24px;      /* fixed size */
+  height: 24px;
+  min-width: 24px;  /* prevents stretching */
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+.skills__names {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skills__data {
+  padding: 0.5rem 1rem;
+  height: auto;
+}
+
+
 .section-title {
   position: relative;
   font-size: var(--h2-font-size);
@@ -126,7 +159,7 @@ img {
   .nav__menu {
     position: fixed;
     top: var(--header-height);
-    right: -100%;
+    right: 100%;
     width: 80%;
     height: 100%;
     padding: 2rem;
@@ -160,6 +193,15 @@ img {
   color: var(--second-color);
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+.nav__logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.logo-highlight {
+  color: var(--first-color);
 }
 
 /*Active menu*/
@@ -306,22 +348,202 @@ img {
   border-radius: 0.5rem;
 }
 
-/* ===== WORK =====*/
+/* ===== WORK TIMELINE STYLE ===== */
+
 .work__container {
-  row-gap: 2rem;
-}
-.work__img {
-  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
-  border-radius: 0.5rem;
-  overflow: hidden;
-}
-.work__img img {
-  transition: 1s;
-}
-.work__img img:hover {
-  transform: scale(1.1);
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 1rem;
 }
 
+#work .section-title {
+  margin-bottom: 0rem;
+}
+
+/* Layout */
+.work__item {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Left side */
+.work__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.work__date {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--first-color);
+  margin-bottom: 4px;
+  
+}
+
+.work__line {
+  width: 2px;
+  flex: 1;
+  background: var(--first-color);
+}
+
+
+/* Right content */
+.work__right {
+  flex: 1;
+  padding: 1.4rem 1.5rem 0.8rem;
+  border-radius: 0.5rem;
+  background: #efeff6;
+  box-shadow: 0px 4px 20px rgba(14, 36, 49, 0.08);
+  transition: 0.3s;
+  max-width: 100%;
+}
+
+.work__right:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 20px rgba(14, 36, 49, 0.12);
+}
+
+
+
+/* Text styling */
+.work__title {
+  font-size: 1.3rem;
+  font-weight: var(--font-semi);
+  margin-top: 0;
+  margin-bottom: 0.1rem;
+}
+
+.work__company {
+  font-size: 0.8rem;
+  color: var(--first-color);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.work__description {
+  font-size: 0.86rem;
+  margin-bottom: 0.3rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.work__points {
+  padding-left: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.work__points li {
+  font-size: 0.80rem;
+  margin-bottom: 0.2rem;
+  line-height: 1.3;
+}
+
+.work__tech {
+  font-size: 0.75rem;
+  color: var(--first-color);
+  margin-bottom: 0.3rem;
+}
+
+/* ===== PROJECTS TIMELINE STYLE (OPTIMIZED) ===== */
+
+.projects__container {
+  display: flex;
+  flex-direction: column;
+  max-width: 850px; /* slightly reduced for better fit */
+  margin: 0 auto;
+  gap: 0.8rem; /* reduced spacing */
+}
+
+#projects .section-title {
+  margin-bottom: 2rem;
+}
+
+/* Layout */
+.project__item {
+  display: flex;
+  gap: 2rem; /* tighter */
+}
+
+/* Left side (timeline) */
+.project__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project__date {
+  font-size: 0.75rem; /* smaller */
+  font-weight: 600;
+  color: var(--first-color);
+  margin-bottom: 4px;
+}
+
+.project__line {
+  width: 2px;
+  flex: 1;
+  background: var(--first-color);
+}
+
+/* Right content */
+.project__right {
+  flex: 1;
+  padding: 0.8rem 1.5rem; /* reduced padding */
+  border-radius: 0.5rem;
+  background: #efeff6;
+  box-shadow: 0px 4px 20px rgba(14, 36, 49, 0.08);
+  transition: 0.3s;
+  max-width: 100%;
+}
+
+.project__right:hover {
+  transform: translateY(-3px); /* subtle */
+  box-shadow: 0px 6px 20px rgba(14, 36, 49, 0.12);
+}
+
+/* Title */
+.project__title {
+  font-size: 1.3rem; /* reduced */
+  font-weight: var(--font-semi);
+  margin-bottom: 0.3rem;
+}
+
+/* Description */
+.project__description {
+  font-size: 0.86rem; /* reduced */
+  margin-bottom: 0.3rem;
+  color: #3f3f3f;
+  line-height: 1.4;
+}
+
+/* Points */
+.project__points {
+  padding-left: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.project__points li {
+  font-size: 0.80rem; /* compact */
+  margin-bottom: 0.2rem;
+  line-height: 1.3;
+}
+
+/* Tech */
+.project__tech {
+  font-size: 0.75rem;
+  color: var(--first-color);
+  margin-bottom: 0rem;
+}
+
+/* Links */
+.project__links a {
+  font-size: 0.78rem;
+  margin-right: 0.8rem;
+  color: var(--first-color);
+  font-weight: 500;
+}
 /* ===== CONTACT =====*/
 .contact__input {
   width: 100%;
@@ -484,3 +706,5 @@ img {
     width: 450px;
   }
 }
+
+
